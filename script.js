@@ -34,5 +34,4 @@ async function fetchProducts() {
 }
 
 
-
  
