@@ -54,5 +54,6 @@ function showNextProduct() {
 prevButton.addEventListener('click', showPreviousProduct);
 nextButton.addEventListener('click', showNextProduct);
 
+fetchProducts();
 
  
