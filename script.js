@@ -38,6 +38,21 @@ function handleError(errorMessage) {
     errorElement.style.display = 'block'; // Show the error message element
     productContainer.innerHTML = ''; // Clear the product container on error
 }
+// Function to show the previous product
+function showPreviousProduct() {
+    currentIndex = (currentIndex === 0) ? products.length - 1 : currentIndex - 1; // Update current index
+    displayProduct(); // Display the previous product
+}
+
+// Function to show the next product
+function showNextProduct() {
+    currentIndex = (currentIndex === products.length - 1) ? 0 : currentIndex + 1; // Update current index
+    displayProduct(); // Display the next product
+}
+
+// Event listeners for previous and next buttons
+prevButton.addEventListener('click', showPreviousProduct);
+nextButton.addEventListener('click', showNextProduct);
 
 
  
