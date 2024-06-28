@@ -32,6 +32,12 @@ async function fetchProducts() {
         loadingElement.style.display = 'none'; // Hide loading indicator after fetch completes
     }
 }
+// Function to handle errors
+function handleError(errorMessage) {
+    errorElement.textContent = errorMessage; // Display the error message
+    errorElement.style.display = 'block'; // Show the error message element
+    productContainer.innerHTML = ''; // Clear the product container on error
+}
 
 
  
