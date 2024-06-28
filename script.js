@@ -32,6 +32,23 @@ async function fetchProducts() {
         loadingElement.style.display = 'none'; // Hide loading indicator after fetch completes
     }
 }
+function displayProduct() {
+    const product = products[currentIndex]; // Get the current product from the products array
+    if (!product) {
+        handleError('Product not found'); // Handle the case where the product is undefined or missing
+        return;
+    }
+    // Display product details in the product container
+    productContainer.innerHTML = `
+        <div class="product">
+            <img src="${product.image || 'placeholder-image.jpg'}" alt="${product.name}">
+            <h2>${product.name}</h2>
+            <p>Price: $${(product.price / 100).toFixed(2)}</p>
+            <p>${product.description}</p>
+        </div>
+    `;
+    errorElement.style.display = 'none'; // Hide error message if products are displayed successfully
+}
 // Function to handle errors
 function handleError(errorMessage) {
     errorElement.textContent = errorMessage; // Display the error message
